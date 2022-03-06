@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST SITE</title>
+        <script>
+            function dom_ready() {
+                alert('DOM is ready');
+                alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+            }
+            document.addEventListener("DOMContentLoaded", dom_ready);
+
+            window.onload = () => { //// can also use window.addEventListener('load', (event) => {})
+                alert('Page fully loaded');
+                alert(`Image size: ${img.offsetWidth}x${img.offsetHeight}`);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>A Test Site</h1>
+        <img id="img" src="board-361516_960_720.jpg"/>
+    </body>
+</html>

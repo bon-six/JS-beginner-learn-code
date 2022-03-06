@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST SITE</title>
+        <script>
+            function myFunc() {  
+                let ret = document.title;  
+                alert("Document Title : " + ret );  
+                ret = document.URL;  
+                alert("Document URL : " + ret );  
+                ret = document.forms[0];  
+                alert("Document First Form : " + ret );  
+                ret = document.forms[0].elements[1];  
+                alert("Second element : " + ret );  
+            }
+            function change_title() {
+                t = document.getElementsByTagName("title");
+                if (t[0].innerHTML == 'TEST SITE') {
+                    t[0].innerHTML = 'I want some CHANGES...';
+                } else {
+                    t[0].innerHTML = 'TEST SITE';
+                }
+            }
+            function change_head(){
+                h = document.getElementById('page_head');
+                if (h.innerHTML.startsWith('A')) {
+                    h.innerHTML = h.innerHTML.replace(/^A\b/,'This');
+                    h.style.color = 'red';
+                }else{
+                    h.innerHTML = h.innerHTML.replace(/\w+\b/,'A');
+                    h.style.color = 'black';
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <h1 id="page_head">A Test Site</h1>
+        <p>Click the following to see the result:</p> 
+      
+        <form name = "FirstForm">
+            <input type="button" value="Click Me" onclick="myFunc();" /> 
+            <input type="button" value="Cancel" onclick="change_head();"> 
+        </form> 
+
+        <form name = "SecondForm"> 
+            <input type="button" value="Don't ClickMe" onclick="change_title();"/> 
+        </form> 
+    </body>
+</html>

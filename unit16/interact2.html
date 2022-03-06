@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TEST SITE</title>
+        <script>
+            function over() {
+                const t = document.createElement('div');
+                t.innerHTML = "Your mouse is over the target";
+                document.body.appendChild(t);
+            }
+            function out() {
+                const t = document.createElement('div');
+                t.innerHTML = "Your mouse left the target";
+                document.body.appendChild(t);
+            }
+        </script>
+    </head>
+    <body>
+        <h1>A Test Site</h1>
+        <p>This is a paragraph of text.</p>
+        <div onmouseout="out();" onmouseover="over();">try to hover your mouse over and out.</div> 
+      
+
+    </body>
+</html>
